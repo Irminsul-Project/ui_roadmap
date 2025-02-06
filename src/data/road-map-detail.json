@@ -1,0 +1,49 @@
+[
+    {
+        "id": "1",
+        "title": "Create Varibale",
+        "categorys" : [
+            {
+                "id": 1,
+                "text": "php"
+            }
+        ],
+        "level_knowlage" : "praktek",
+        "sources" : [
+            {
+                "type" : "url",
+                "data": "https://www.w3schools.com/php/php_variables.asp"
+            }
+        ],
+        "last_update" : {
+            "by": {
+                "name": "Jimmy"
+            },
+            "timestamps": 1738695595
+        },
+        "teorys": [
+            {
+                "type": "url",
+                "data": "https://www.w3schools.com/php/php_variables.asp"
+            }
+        ],
+        "sections" : [
+            {
+                "index" : 1,
+                "content" : "Di PHP, variabel digunakan untuk menyimpan data, seperti angka, teks, atau array. Cara mendeklarasikan variabel sangat mudah, cukup gunakan tanda $ diikuti dengan nama variabelnya.",
+                "content_type": "text"
+            },
+            {
+                "index": 2,
+                "title": "contoh script php",
+                "content": "<?php\n$nama = \"John\"; // Tipe data string\n$usia = 25; // Tipe data integer\n$tinggi = 1.75; // Tipe data float\n$isStudent = true; // Tipe data boolean\n\necho \"Nama: $nama, Usia: $usia tahun, Tinggi: $tinggi meter\";\n?>",
+                "content_type": "code"
+            },
+            {
+                "index": 3,
+                "content": "Aturan Penamaan Variabel:\n✅ Harus diawali dengan tanda $\n✅ Hanya boleh mengandung huruf, angka, dan underscore (_)\n✅ Tidak boleh diawali dengan angka\n✅ Sensitif terhadap huruf besar dan kecil ($Nama berbeda dengan $nama)\nDengan memahami konsep ini, kamu siap untuk menggunakan variabel dalam program PHP! 🚀",
+                "content_type": "text"
+            }
+        ]
+    }
+]

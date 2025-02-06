@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { VueFlow } from '@vue-flow/core'
+import contant from './road-map/content.vue'
 import json from "../data/roud-map.json";
 
 const nodes = ref(json)
@@ -18,14 +19,14 @@ json.forEach((data, index) => {
   }
 });
 
-const description = ref("")
+const description = ref(null)
 const TranslateExtent = [
   [0, 0],
   [500, 800]
 ];
 
 function onNodeClick({ event, node }) {
-  description.value = `content : ${node.data.label}`
+  description.value = node.id
 }
 
 defineProps({
@@ -53,8 +54,8 @@ defineProps({
         @node-click="onNodeClick">
      </VueFlow>
     </div>
-    <div class="flex-1 road-map-content">
-      {{ description }}
+    <div class="flex-1" v-if="description != null">
+      <contant :content_id="description"/>
     </div>
   </div>
 </template>
