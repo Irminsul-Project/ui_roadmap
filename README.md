@@ -17,3 +17,5 @@ https://sortablejs.github.io/Vue.Draggable/#/simple
 https://primevue.org/vite
 
 https://v3.tailwindcss.com/docs/guides/vite
+
+https://simple-code-editor.vicuxd.com/
