@@ -1,9 +1,10 @@
+import './style.css'
+import 'highlight.js';
 import { createApp } from 'vue';
+import App from './app.vue'
 import Aura from '@primevue/themes/aura';
 import PrimeVue from 'primevue/config';
-import './style.css'
-import App from './App.vue'
-
+import router from "./router/index.js";
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -14,4 +15,6 @@ app.use(PrimeVue, {
         }
     }
 });
+
+app.use(router)
 app.mount("#app")

@@ -1,10 +1,7 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script setup></script>
 
 <template>
-  <HelloWorld msg="PHP" />
+    <router-view />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

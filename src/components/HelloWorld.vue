@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import { VueFlow } from '@vue-flow/core'
+import { VueFlow, useVueFlow } from '@vue-flow/core'
 import contant from './road-map/content.vue'
 import json from "../data/roud-map.json";
-
+const { updateNode } = useVueFlow()
 const nodes = ref(json)
 
 const edges = ref([])
@@ -27,6 +27,8 @@ const TranslateExtent = [
 
 function onNodeClick({ event, node }) {
   description.value = node.id
+  updateNode(node.id, { style: { backgroundColor: "#777" } })
+  console.log(node.id)
 }
 
 defineProps({
@@ -54,7 +56,7 @@ defineProps({
         @node-click="onNodeClick">
      </VueFlow>
     </div>
-    <div class="flex-1" v-if="description != null">
+    <div class="flex-1 overflow-y-auto max-h-screen" v-if="description != null">
       <contant :content_id="description"/>
     </div>
   </div>

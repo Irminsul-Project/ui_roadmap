@@ -3,36 +3,55 @@ import json from "../../data/road-map-detail.json";
 import Card from 'primevue/card';
 import moment from 'moment';
 import CodeEditor from 'simple-code-editor';
-
+import { watchEffect } from 'vue'
 const Props = defineProps({
   content_id: String,
 })
 
-let Detail = {};
-json.forEach(content => {
-  console.log(content, Props.content_id)
-  if (content.id == Props.content_id) {
-    Detail = content
-  }
-});
+let DetailFound = false
+let categorys = ""
+let sections = ""
+let last_update = ""
+let teorys = ""
+let sources = ""
+let title = ""
+let level_knowlage = ""
 
-const categorys = Detail.categorys
-const sections = Detail.sections
-const last_update = Detail.last_update
-const teorys = Detail.teorys
-const sources = Detail.sources
+watchEffect(() => {
+  let Detail = {}
+  DetailFound = false
+  
+  json.forEach(content => {
+    if (content.id == Props.content_id) {
+      DetailFound = true
+      Detail = content
+    }
+  });
+
+  if (DetailFound == true) {
+    categorys = Detail.categorys
+    sections = Detail.sections
+    last_update = Detail.last_update
+    teorys = Detail.teorys
+    sources = Detail.sources
+    title = Detail.title
+    level_knowlage = Detail.level_knowlage
+  }
+})
+
+
 </script>
 
 <template>
-  <div>
-    <h1>{{ Detail.title }}</h1>
+  <div v-if="DetailFound == true">
+    <h1>{{ title }}</h1>
     <hr>
     <div>
       <strong>category :</strong>
       <span v-for="category in categorys" :key="category.text">{{ category.text }}</span>
     </div>
     <div>
-      <p>level knowlage : {{ Detail.level_knowlage }}</p>
+      <p>level knowlage : {{ level_knowlage }}</p>
     </div>
     <Card v-for="section in sections" :key="section.id">
         <template #title>{{ section.title }}</template>
@@ -57,6 +76,11 @@ const sources = Detail.sources
       <p>Last update : {{moment(last_update.timestamps).format('YYYY-MM-DD HH:mm:ss')}}</p>
       <p>By : {{last_update.by.name}}</p>
     </div>
+  </div>
+  <div v-else>
+    <p>
+      Not Found
+    </p>
   </div>
 </template>
 
