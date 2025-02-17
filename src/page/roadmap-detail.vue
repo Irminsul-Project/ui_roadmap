@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { VueFlow, useVueFlow } from '@vue-flow/core'
-import contant from './road-map/content.vue'
+import contant from '../components/road-map/content.vue'
 import json from "../data/roud-map.json";
 const { updateNode } = useVueFlow()
 const nodes = ref(json)

@@ -1,5 +1,7 @@
 import './style.css'
+import './custome-timeline.scss'
 import 'highlight.js';
+import 'primeicons/primeicons.css'
 import { createApp } from 'vue';
 import App from './app.vue'
 import Aura from '@primevue/themes/aura';
