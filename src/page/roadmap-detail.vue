@@ -27,8 +27,8 @@ const TranslateExtent = [
 
 function onNodeClick({ event, node }) {
   description.value = node.id
+
   updateNode(node.id, { style: { backgroundColor: "#777" } })
-  console.log(node.id)
 }
 
 defineProps({
