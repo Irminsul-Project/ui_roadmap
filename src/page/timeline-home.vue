@@ -5,12 +5,17 @@ const msg = ref('PHP');
 </script>
 
 <template>
-    <div class="container mx-auto px-4">
-        <h1 class="mb-3">
-            Select Reasearch
-        </h1>
-        <hyperlink title="Membuat Time line" to="/timeline/php"/>
+    <div class="flex">
+        <div class="flex-1">
+            <h1 class="mb-3">
+                Select Reasearch
+            </h1>
+        </div>
+        <div class="flex-1 text-right">
+            <hyperlink title="Create New" to="/timelinecreate"/>
+        </div>
     </div>
+    <hyperlink title="Membuat Time line" to="/timeline/php"/>
 </template>
 
 <style scoped>
