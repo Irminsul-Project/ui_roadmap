@@ -1,21 +1,15 @@
 <script setup>
-import Timeline from 'prmevue/timeline';
 import { ref } from "vue";
 import Card from 'primevue/card';
+import Checkbox from 'primevue/checkbox';
 import Button from 'primevue/button';
 import Hyperlink from '../components/button/hyperlink.vue';
-
-const events = ref([
-    { status: 'Ordered', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0' },
-    { status: 'Processing', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7' },
-    { status: 'Shipped', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800' },
-    { status: 'Delivered', date: '16/10/2020 10:00', icon: 'pi pi-check', color: '#607D8B' }
-]);
-
-const ContentId = ref("");
-const SelectContect = (Content = "") => {
-    ContentId.value = Content
-}
+import Editor from 'primevue/editor';
+import InputText from 'primevue/inputtext';
+import InputGroup from 'primevue/inputgroup';
+import InputGroupAddon from 'primevue/inputgroupaddon';
+const TargetCount = ref(1);
+const TargetNeedBool = ref(true);
 </script>
 
 <template>
@@ -27,7 +21,7 @@ const SelectContect = (Content = "") => {
                 </div>
                 <div class="flex-2">
                     <h1 class="text-center font-extrabold">
-                        Time Line
+                        Create Time Line
                     </h1>
                 </div>
                 <div class="flex-1 text-right">
@@ -36,16 +30,43 @@ const SelectContect = (Content = "") => {
             </div>
         </template>
         <template #content>
-                <div class="flex-2">
-                    <FloatLabel variant="on">
-                        <label for="on_label">Title</label>
-                        <InputText id="on_label" v-model="title" class="size-full"/>
-                    </FloatLabel>
-                </div>
-            <Editor v-model="content" editorStyle="height: 320px"/>
+            <div class="mb-2">
+                <p class="font-bold block mb-2">
+                    Title
+                </p>
+                <InputText class="w-full"/>
+            </div>
+            <div class="mb-2">
+                <p class="font-bold block mb-2">
+                    Description 
+                </p>
+                <Editor v-model="content" editorStyle="height: 320px"/>
+            </div>
+            <div class="mb-2">
+                <p class="font-bold block mb-2">
+                    Target
+                    <Checkbox v-model="TargetNeedBool" binary />
+                </p>
+                <template v-if="TargetNeedBool">
+                    <template v-for="Count in TargetCount" :key="Count">
+                        <InputGroup class="mb-2">
+                            <InputGroupAddon>
+                                {{Count}}
+                            </InputGroupAddon>
+                            <InputText :id="`target-${Count}`" class="w-full" :placeholder="`Target`"/>
+                            <InputGroupAddon v-if="TargetCount > 1">
+                                <Button icon="pi pi-times" severity="danger" />
+                            </InputGroupAddon>
+                            <InputGroupAddon>
+                                <Button icon="pi pi-plus" severity="success" />
+                            </InputGroupAddon>
+                        </InputGroup>
+                    </template>
+                </template>
+            </div>
         </template>
     </Card>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

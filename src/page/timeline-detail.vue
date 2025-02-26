@@ -33,7 +33,7 @@ const SelectContect = (Content = "") => {
                         </h1>
                     </div>
                     <div class="flex-1 text-right">
-                        <Button label="Create New" severity="info" @click="SelectContect('create')"/>
+                        <Button icon="pi pi-plus" severity="info" @click="SelectContect('create')"/>
                     </div>
                 </div>
             </template>
@@ -63,7 +63,6 @@ const SelectContect = (Content = "") => {
                         <ContentNew/>
                     </template>
                     <template v-else>
-                        
                     </template>
                 </template>
             </template>

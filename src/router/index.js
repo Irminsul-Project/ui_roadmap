@@ -30,6 +30,7 @@ const routes = [
             {
                 path: '/timeline/:id',
                 component: TimeLineDetail,
+                props: true
             },
             {
                 path: '/timelinecreate',
@@ -38,6 +39,7 @@ const routes = [
             {
                 path: '/knowlage/:id',
                 component: RoadMapDetail,
+                props: true
             }
         ]
     }

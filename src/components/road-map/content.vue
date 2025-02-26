@@ -88,4 +88,14 @@ watchEffect(() => {
 .read-the-docs {
   color: #888;
 }
+
+div.scroll{
+  position: relative;
+  overflow: auto;
+  contain: strict;
+  transform: translateZ(0);
+  will-change: scroll-position;
+  outline: 0 none;
+  height: 100vh;
+}
 </style>

@@ -2,7 +2,11 @@
 import { ref } from 'vue'
 import { VueFlow, useVueFlow } from '@vue-flow/core'
 import contant from '../components/road-map/content.vue'
-import json from "../data/roud-map.json";
+import json from "../data/road-map.json";
+import Splitter from 'primevue/splitter';
+import SplitterPanel from 'primevue/splitterpanel';
+import Hyperlink from '../components/button/hyperlink.vue';
+
 const { updateNode } = useVueFlow()
 const nodes = ref(json)
 
@@ -31,49 +35,56 @@ function onNodeClick({ event, node }) {
   updateNode(node.id, { style: { backgroundColor: "#777" } })
 }
 
-defineProps({
-  msg: String,
+const Props = defineProps({
+  id: String,
 })
 </script>
 
 <template>
-  <div class="flex">
-    <div class="flex-1 road-map">
+  <div class="layout">
+    <div class="flex">
+      <hyperlink to="/knowlage" title="back"/>
       <h1>
-        Road map {{msg}}
+        Road map {{id}}
       </h1>
-      <VueFlow
-        :nodes="nodes"
-        :edges="edges"
-        :nodes-draggable="false"
-        :zoom-on-double-click="false"
-        :pan-on-drag="false"
-        :zoom-on-scroll="false"
-        :zoom-on-pinch="false"
-        :pan-on-scroll="true"
-        pan-on-scroll-mode="vertical"
-        :translate-extent="TranslateExtent"
-        @node-click="onNodeClick">
-     </VueFlow>
     </div>
-    <div class="flex-1 overflow-y-auto max-h-screen" v-if="description != null">
-      <contant :content_id="description"/>
-    </div>
+    <Splitter class="content">
+      <SplitterPanel size="30">
+        <VueFlow
+          :nodes="nodes"
+          :edges="edges"
+          :nodes-draggable="false"
+          :zoom-on-double-click="false"
+          :pan-on-drag="false"
+          :zoom-on-scroll="false"
+          :zoom-on-pinch="false"
+          :pan-on-scroll="true"
+          pan-on-scroll-mode="vertical"
+          :translate-extent="TranslateExtent"
+          @node-click="onNodeClick">
+       </VueFlow>
+      </SplitterPanel>
+      <SplitterPanel>
+        <div class="flex-1 overflow-y-auto max-h-screen" v-if="description != null">
+          <contant :content_id="description"/>
+        </div>
+      </SplitterPanel>
+    </Splitter>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex-grow: 1;    
+  }
+}
+
 .read-the-docs {
   color: #888;
-}
-
-.road-map {
-  height: 90vh;
-}
-
-.road-map-content {
-  border-left: #000 solid;
-  padding-left: 10px;
-  height: 100vh;
 }
 </style>

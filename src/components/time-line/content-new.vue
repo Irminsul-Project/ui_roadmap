@@ -14,7 +14,7 @@ const save = () => {
 </script>
 
 <template>
-  <div class="flex mb-10">
+  <div class="flex mb-10 gap-4">
     <div class="flex-2">
       <FloatLabel variant="on">
         <label for="on_label">Title</label>
@@ -22,7 +22,10 @@ const save = () => {
       </FloatLabel>
     </div>
     <div class="flex-1 text-right">
-      <Button label="Create" severity="info" @click="save"/>
+      <div class="grid grid-cols-2 gap-4">
+        <Button label="Add Comment" severity="info" @click="save"/>
+        <Button label="Update Progress" severity="info" @click="save"/>
+      </div>
     </div>
   </div>
   <Editor v-model="content" editorStyle="height: 320px"/>
@@ -32,4 +35,5 @@ const save = () => {
 .read-the-docs {
   color: #888;
 }
+
 </style>
