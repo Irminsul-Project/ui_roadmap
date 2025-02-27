@@ -1,0 +1,57 @@
+[
+    {
+        "id": "1",
+        "title": "PHP",
+        "Detail": [
+            {
+                "id": "10",
+                "title": "Instalasi",
+                "date": "10-jun-2024",
+                "content": "<p>asdjflkjaslfjas</p><p>as;'djfjlkasjfl</p><p>asdjfljasdlf</p><p><br></p><p>asdflkalfjasdf</p><p><br></p><p><br></p><p>asdflkklasdfkjlas</p><p><br></p><p><br></p><p>asd;fjklasdjflasdf</p><p>a</p><p><br></p><p>asdfkjasdlfjasf</p><p>as</p><p>fasd;'kfjasdl</p>",
+                "update_target": [
+                ],
+                "contributor": [
+                    {
+                        "id": "",
+                        "name": "XXXX"
+                    }
+                ],
+                "type": "progress"
+            },
+            {
+                "id": "11",
+                "title": "gagal istalasi",
+                "date": "11-jun-2024",
+                "content": "<p>asdjflkjaslfjas</p><p>as;'djfjlkasjfl</p><p>asdjfljasdlf</p><p><br></p><p>asdflkalfjasdf</p><p><br></p><p><br></p><p>asdflkklasdfkjlas</p><p><br></p><p><br></p><p>asd;fjklasdjflasdf</p><p>a</p><p><br></p><p>asdfkjasdlfjasf</p><p>as</p><p>fasd;'kfjasdl</p>",
+                "update_target": [
+                ],
+                "contributor": [
+                    {
+                        "id": "",
+                        "name": "XXXX"
+                    }
+                ],
+                "type": "problem"
+            },
+            {
+                "id": "12",
+                "title": "Sukses Instalasi",
+                "date": "12-jun-2024",
+                "content": "<p>asdjflkjaslfjas</p><p>as;'djfjlkasjfl</p><p>asdjfljasdlf</p><p><br></p><p>asdflkalfjasdf</p><p><br></p><p><br></p><p>asdflkklasdfkjlas</p><p><br></p><p><br></p><p>asd;fjklasdjflasdf</p><p>a</p><p><br></p><p>asdfkjasdlfjasf</p><p>as</p><p>fasd;'kfjasdl</p>",
+                "update_target": [
+                    {
+                        "id": "10",
+                        "detail": "instalasi"
+                    }
+                ],
+                "contributor": [
+                    {
+                        "id": "",
+                        "name": "XXXX"
+                    }
+                ],
+                "type": "success"
+            }
+        ]
+    }
+]

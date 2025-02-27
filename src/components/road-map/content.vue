@@ -4,6 +4,7 @@ import Card from 'primevue/card';
 import moment from 'moment';
 import CodeEditor from 'simple-code-editor';
 import { watchEffect } from 'vue'
+
 const Props = defineProps({
   content_id: String,
 })
@@ -38,8 +39,6 @@ watchEffect(() => {
     level_knowlage = Detail.level_knowlage
   }
 })
-
-
 </script>
 
 <template>
