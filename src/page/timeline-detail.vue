@@ -4,7 +4,9 @@ import { ref } from "vue";
 import Card from 'primevue/card';
 import Button from 'primevue/button';
 import ContentNew from "../components/time-line/content-new.vue";
+import ContentDescription from "../components/time-line/content-description.vue";
 import Hyperlink from '../components/button/hyperlink.vue';
+import Toolbar from 'primevue/toolbar';
 
 const events = ref([
     { status: 'Ordered', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0' },
@@ -13,9 +15,14 @@ const events = ref([
     { status: 'Delivered', date: '16/10/2020 10:00', icon: 'pi pi-check', color: '#607D8B' }
 ]);
 
+const Props = defineProps({
+  id: String,
+})
+
 const ContentId = ref("");
+const Mode = ref("info");
 const SelectContect = (Content = "") => {
-    ContentId.value = Content
+    Mode.value = Content
 }
 </script>
 
@@ -24,16 +31,10 @@ const SelectContect = (Content = "") => {
         <Card class="flex-1 h-screen">
             <template #title>
                 <div class="flex">
-                    <div class="flex-1 text-left">
-                        <hyperlink to="/timeline" title="back"/>
-                    </div>
                     <div class="flex-2">
                         <h1 class="text-center font-extrabold">
                             Time Line
                         </h1>
-                    </div>
-                    <div class="flex-1 text-right">
-                        <Button icon="pi pi-plus" severity="info" @click="SelectContect('create')"/>
                     </div>
                 </div>
             </template>
@@ -58,9 +59,26 @@ const SelectContect = (Content = "") => {
         </Card>
         <Card class="flex-3">
             <template #content>
-                <template v-if="ContentId != ''">
-                    <template v-if="ContentId == 'create'">
+                <Toolbar class="mb-[15px]">
+                    <template #start>
+                        <div class="flex-1 text-left">
+                            <hyperlink to="/timeline" title="back"/>
+                        </div>
+                    </template>
+                    <template #center>
+                        {{Props.id}}
+                    </template>
+                    <template #end>
+                        <Button icon="pi pi-info" class="mr-[10px]" severity="info" @click="SelectContect('info')"/>
+                        <Button icon="pi pi-plus" severity="info" @click="SelectContect('create')"/>
+                    </template>
+                </Toolbar>
+                <template v-if="Mode != ''">
+                    <template v-if="Mode == 'create'">
                         <ContentNew/>
+                    </template>
+                    <template v-else-if="Mode == 'info'">
+                        <ContentDescription/>
                     </template>
                     <template v-else>
                     </template>
