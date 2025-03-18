@@ -14,6 +14,10 @@
         {
             label: 'Reasearch',
             route: '/timeline'
+        },
+        {
+            label: 'Forum',
+            route: '/forum'
         }
     ]);
 </script>

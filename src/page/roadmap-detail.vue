@@ -2,10 +2,10 @@
 import { ref } from 'vue'
 import { VueFlow, useVueFlow } from '@vue-flow/core'
 import contant from '../components/road-map/content.vue'
+import Hyperlink from '../components/button/hyperlink.vue';
 import json from "../data/road-map.json";
 import Splitter from 'primevue/splitter';
 import SplitterPanel from 'primevue/splitterpanel';
-import Hyperlink from '../components/button/hyperlink.vue';
 
 const { updateNode } = useVueFlow()
 const nodes = ref(json)

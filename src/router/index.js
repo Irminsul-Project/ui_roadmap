@@ -4,6 +4,9 @@ import DefaultLayout from '../layout/default-layout.vue';
 import HomePage from '../page/home.vue';
 import RoadMapDetail from '../page/roadmap-detail.vue';
 import RoadMapHome from '../page/roadmap-home.vue';
+import ForumHome from '../page/forum-home.vue';
+import ForumCreate from '../page/forum-create.vue';
+import ForumDetail from '../page/forum-detail.vue';
 import TimelineCreate from '../page/timeline-create.vue';
 import TimeLineDetail from '../page/timeline-detail.vue';
 import TimeLineHome from '../page/timeline-home.vue';
@@ -22,6 +25,10 @@ const routes = [
             {
                 path: '/knowlage',
                 component: RoadMapHome,
+            },
+            {
+                path: '/forum',
+                component: ForumHome,
             }
         ]
     },
@@ -35,6 +42,15 @@ const routes = [
             {
                 path: '/timelinecreate',
                 component: TimelineCreate,
+            },
+            {
+                path: '/forum/:id',
+                component: ForumDetail,
+                props: true
+            },
+            {
+                path: '/forumcreate',
+                component: ForumCreate,
             },
             {
                 path: '/knowlage/:id',

@@ -390,7 +390,7 @@
 
 "@types/trusted-types@^2.0.7":
   version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@types/trusted-types/-/trusted-types-2.0.7.tgz#baccb07a970b91707df3a3e8ba6896c57ead2d11"
+  resolved "https://registry.npmjs.org/@types/trusted-types/-/trusted-types-2.0.7.tgz"
   integrity sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==
 
 "@types/web-bluetooth@^0.0.20":
@@ -631,7 +631,7 @@ detect-libc@^1.0.3:
 
 dompurify@^3.2.1:
   version "3.2.4"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.2.4.tgz#af5a5a11407524431456cf18836c55d13441cd8e"
+  resolved "https://registry.npmjs.org/dompurify/-/dompurify-3.2.4.tgz"
   integrity sha512-ysFSFEDVduQpyhzAob/kkuJjf5zWkZD8/A9ywSp1byueyuCfHamrCBa14/Oc2iiB0e51B+NpxSl5gmzn+Ms/mg==
   optionalDependencies:
     "@types/trusted-types" "^2.0.7"
@@ -741,7 +741,7 @@ immutable@^5.0.2:
     "@primevue/themes" "^4.2.5"
     "@tailwindcss/vite" "^4.0.2"
     "@vue-flow/core" "^1.42.1"
-    irminsul "file:D:/Tools/yarn/cache/v6/npm-irminsul-0.0.0-91009207-f290-4570-8d89-50c352f5d32e-1741013065964/node_modules/irminsul"
+    irminsul "file:D:/Tools/yarn/cache/v6/npm-irminsul-0.0.0-9425007f-6a50-4ab4-8fd6-b5fc5d22981c-1742323585800/node_modules/irminsul"
     moment "^2.30.1"
     primeicons "^7.0.0"
     primevue "^4.2.5"
@@ -749,6 +749,7 @@ immutable@^5.0.2:
     simple-code-editor "^2.0.9"
     tailwindcss-primeui "^0.4.0"
     vue "^3.5.13"
+    vue-dompurify-html "^5.2.0"
     vue-router "4"
     vuedraggable "^2.24.3"
 
@@ -1175,6 +1176,11 @@ vite@^6.0.5:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vue-cookies@^1.8.6:
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/vue-cookies/-/vue-cookies-1.8.6.tgz#31b05e39b8c3dfe5012b5013395b4f6b86f86c3a"
+  integrity sha512-e2kYaHj1Y/zVsBSM3KWlOoVJ5o3l4QZjytNU7xdCgmkw3521CMUerqHekBGZKXXC1oRxYljBeeOK2SCel6cKuw==
+
 vue-demi@>=0.14.8:
   version "0.14.10"
   resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.14.10.tgz"
@@ -1182,7 +1188,7 @@ vue-demi@>=0.14.8:
 
 vue-dompurify-html@^5.2.0:
   version "5.2.0"
-  resolved "https://registry.yarnpkg.com/vue-dompurify-html/-/vue-dompurify-html-5.2.0.tgz#a8bb6cbee94f6e8581fd42c57096bde5185dcaf2"
+  resolved "https://registry.npmjs.org/vue-dompurify-html/-/vue-dompurify-html-5.2.0.tgz"
   integrity sha512-GX+BStkKEJ8wu/+hU1EK2nu/gzXWhb4XzBu6aowpsuU/3nkvXvZ2jx4nZ9M3jtS/Vu7J7MtFXjc7x3cWQ+zbVQ==
   dependencies:
     dompurify "^3.2.1"

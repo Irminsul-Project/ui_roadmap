@@ -1,11 +1,11 @@
 <script setup>
-import Timeline from 'primevue/timeline';
 import { ref } from "vue";
-import Card from 'primevue/card';
 import Button from 'primevue/button';
-import ContentNew from "../components/time-line/content-new.vue";
+import Card from 'primevue/card';
 import ContentDescription from "../components/time-line/content-description.vue";
+import ContentNew from "../components/time-line/content-new.vue";
 import Hyperlink from '../components/button/hyperlink.vue';
+import Timeline from 'primevue/timeline';
 import Toolbar from 'primevue/toolbar';
 
 const events = ref([
