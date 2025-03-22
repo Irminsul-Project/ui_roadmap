@@ -1,6 +1,12 @@
 <script setup>
-    import { ref } from 'vue';
+    import {ref, inject} from 'vue';
     import Menubar from 'primevue/menubar';
+    import hyperlink from '../components/button/hyperlink.vue';
+
+    const $cookies = inject('$cookies');
+    // $cookies.set('session', 'xs34rfff', '7d');
+    // $cookies.remove('session');
+    const Session = $cookies.get('session')
 
     const items = ref([
         {
@@ -24,7 +30,7 @@
 
 <template>
     <div class="container mx-auto px-1 pt-[15px]">
-        <Menubar :model="items" class="mb-[10px]">
+        <Menubar :model="items" class="mb-[20px]">
             <template #item="{ item, props, hasSubmenu }">
                 <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
                     <a v-ripple :href="href" v-bind="props.action" @click="navigate">
@@ -37,6 +43,13 @@
                     <span>{{ item.label }}</span>
                     <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down" />
                 </a>
+            </template>
+            <template #end>
+                <template v-if="Session === null">
+                    <div class="flex items-center gap-2">
+                        <hyperlink title="Login" :to="`/login`"/>
+                    </div>
+                </template>
             </template>
         </Menubar>
         <router-view />
