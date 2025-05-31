@@ -2,11 +2,11 @@
 import { instance } from '../utils/connection/api.js';
 import { ref, onMounted } from "vue";
 import { useToast } from "primevue/usetoast";
-import { useResearchStore } from "../stores/useResearchStore";
+import { useResearchStore } from "../stores/useResearchStore.js";
 import Button from 'primevue/button';
 import Card from 'primevue/card';
-import ContentDescription from "../components/time-line/content-description.vue";
-import ContentNew from "../components/time-line/content-new.vue";
+import ContentDescription from "../components/research/content-description.vue";
+import ContentNew from "../components/research/content-new.vue";
 import Hyperlink from '../components/button/hyperlink.vue';
 import Timeline from 'primevue/timeline';
 import Toolbar from 'primevue/toolbar';
@@ -41,7 +41,7 @@ const fetchResearchData = async () => {
 
         ResearchStore.setDescription(researchData.content || "");
         ResearchStore.setTarget(response.data.data.targets || []);
-        ResearchStore.setTimeline(response.data.data.timelines || []);
+        ResearchStore.setResearch(response.data.data.timelines || []);
     } catch (error) {
         loading.value = false;
         if (error.response === undefined) {
@@ -78,7 +78,7 @@ onMounted(() => {
                     </div>
                     <div class="flex-1 grow">
                         <ScrollPanel style="height: calc(100vh - 57.5px);">
-                            <Timeline :value="ResearchStore.getTimeline" class="timeline-event-opposite-hide">
+                            <Timeline :value="ResearchStore.getResearch" class="timeline-event-opposite-hide">
                                 <template #marker>
                                     <div class="p-timeline-event-marker" data-pc-section="eventmarker" />
                                 </template>
@@ -108,7 +108,7 @@ onMounted(() => {
                     <Toolbar class="mb-[15px]">
                         <template #start>
                             <div class="flex-1 text-left">
-                                <hyperlink to="/timeline" title="Back" />
+                                <hyperlink to="/research" title="Back" />
                             </div>
                         </template>
                         <template #center>

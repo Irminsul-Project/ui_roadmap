@@ -3,14 +3,12 @@ import BlankLayout from '../layout/blank-layout.vue';
 import DefaultLayout from '../layout/default-layout.vue';
 import HomePage from '../page/home.vue';
 import LoginPage from '../page/login.vue';
-import RoadMapDetail from '../page/roadmap-detail.vue';
-import RoadMapHome from '../page/roadmap-home.vue';
 import ForumHome from '../page/forum-home.vue';
 import ForumCreate from '../page/forum-create.vue';
 import ForumDetail from '../page/forum-detail.vue';
-import TimelineCreate from '../page/timeline-create.vue';
-import TimeLineDetail from '../page/timeline-detail.vue';
-import TimeLineHome from '../page/timeline-home.vue';
+import ResearchCreate from '../page/research-create.vue';
+import TimeLineDetail from '../page/research-detail.vue';
+import TimeLineHome from '../page/research-home.vue';
 
 const routes = [
     {
@@ -20,12 +18,8 @@ const routes = [
                 component: HomePage,
             },
             {
-                path: '/timeline',
+                path: '/research',
                 component: TimeLineHome,
-            },
-            {
-                path: '/knowlage',
-                component: RoadMapHome,
             },
             {
                 path: '/forum',
@@ -45,8 +39,8 @@ const routes = [
                 props: true
             },
             {
-                path: '/timelinecreate',
-                component: TimelineCreate,
+                path: '/researchcreate',
+                component: ResearchCreate,
             },
             {
                 path: '/forum/:id',
@@ -56,11 +50,6 @@ const routes = [
             {
                 path: '/forumcreate',
                 component: ForumCreate,
-            },
-            {
-                path: '/knowlage/:id',
-                component: RoadMapDetail,
-                props: true
             }
         ]
     }

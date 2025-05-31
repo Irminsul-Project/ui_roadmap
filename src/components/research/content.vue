@@ -16,7 +16,7 @@ let last_update = ""
 let teorys = ""
 let sources = ""
 let title = ""
-let level_knowlage = ""
+let level_knowledge = ""
 
 watchEffect(() => {
     let Detail = {}
@@ -36,7 +36,7 @@ watchEffect(() => {
         teorys = Detail.teorys
         sources = Detail.sources
         title = Detail.title
-        level_knowlage = Detail.level_knowlage
+        level_knowledge = Detail.level_knowledge
     }
 })
 </script>

@@ -1,5 +1,5 @@
 <script setup>
-import Timeline from 'primevue/timeline';
+import timeline from 'primevue/timeline';
 import { ref } from "vue";
 import Card from 'primevue/card';
 import Button from 'primevue/button';
@@ -14,7 +14,7 @@ const events = ref([
 
 <template>
     <div class="card">
-        <Timeline :value="events" align="alternate" class="customized-timeline">
+        <timeline :value="events" align="alternate" class="customized-research">
             <template #marker="slotProps">
                 <span class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm" :style="{ backgroundColor: slotProps.item.color }">
                     <i :class="slotProps.item.icon" />
@@ -38,22 +38,22 @@ const events = ref([
                     </template>
                 </Card>
             </template>
-        </Timeline>
+        </timeline>
     </div>
 </template>
 
 <style lang="scss" scoped>
 @media screen and (max-width: 960px) {
-    ::v-deep(.customized-timeline) {
-        .p-timeline-event:nth-child(even) {
+    ::v-deep(.customized-research) {
+        .p-research-event:nth-child(even) {
             flex-direction: row;
 
-            .p-timeline-event-content {
+            .p-research-event-content {
                 text-align: left;
             }
         }
 
-        .p-timeline-event-opposite {
+        .p-research-event-opposite {
             flex: 0;
         }
     }

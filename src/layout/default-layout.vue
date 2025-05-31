@@ -9,12 +9,8 @@ const items = ref([
         route: '/'
     },
     {
-        label: 'Tree Of Knowlage',
-        route: '/knowlage'
-    },
-    {
         label: 'Research',
-        route: '/timeline'
+        route: '/research'
     },
     {
         label: 'Forum',

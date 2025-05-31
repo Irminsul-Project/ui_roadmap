@@ -1,4 +1,4 @@
-import './custome-timeline.scss'
+import './timeline-custome.scss'
 import './style.css'
 import 'highlight.js';
 import 'primeicons/primeicons.css'
