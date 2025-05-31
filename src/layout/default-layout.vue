@@ -1,31 +1,35 @@
 <script setup>
-    import {ref, inject} from 'vue';
-    import Menubar from 'primevue/menubar';
-    import hyperlink from '../components/button/hyperlink.vue';
+import {ref} from 'vue';
+import Menubar from 'primevue/menubar';
+import hyperlink from '../components/button/hyperlink.vue';
 
-    const $cookies = inject('$cookies');
-    // $cookies.set('session', 'xs34rfff', '7d');
-    // $cookies.remove('session');
-    const Session = $cookies.get('session')
+const items = ref([
+    {
+        label: 'Home',
+        route: '/'
+    },
+    {
+        label: 'Tree Of Knowlage',
+        route: '/knowlage'
+    },
+    {
+        label: 'Research',
+        route: '/timeline'
+    },
+    {
+        label: 'Forum',
+        route: '/forum'
+    }
+]);
 
-    const items = ref([
-        {
-            label: 'Home',
-            route: '/'
-        },
-        {
-            label: 'Tree Of Knowlage',
-            route: '/knowlage'
-        },
-        {
-            label: 'Reasearch',
-            route: '/timeline'
-        },
-        {
-            label: 'Forum',
-            route: '/forum'
-        }
-    ]);
+import { useUserStore } from '../stores/userStore';
+
+const userStore = useUserStore();
+
+const Logout = () => {
+    userStore.logout();
+    window.location.reload()
+};
 </script>
 
 <template>
@@ -45,9 +49,16 @@
                 </a>
             </template>
             <template #end>
-                <template v-if="Session === null">
+                <template v-if="userStore.isLoggedIn == false">
                     <div class="flex items-center gap-2">
-                        <hyperlink title="Login" :to="`/login`"/>
+                        <hyperlink title="Login" to="/login" />
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="flex items-center gap-2">
+                        <button class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" @click="Logout">
+                            Logout
+                        </button>
                     </div>
                 </template>
             </template>

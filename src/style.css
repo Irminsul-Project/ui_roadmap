@@ -4,3 +4,10 @@
 
 /* this contains the default theme, these are optional styles */
 @import '@vue-flow/core/dist/theme-default.css';
+
+:root {
+    --p-progressspinner-color-one: var(--p-red-500);
+    --p-progressspinner-color-two: var(--p-blue-500);
+    --p-progressspinner-color-three: var(--p-green-500);
+    --p-progressspinner-color-four: var(--p-yellow-500);
+}

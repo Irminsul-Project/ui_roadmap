@@ -9,18 +9,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@primeuix/themes": "^1.0.1",
+    "@primevue/forms": "^4.3.3",
     "@primevue/themes": "^4.2.5",
     "@tailwindcss/vite": "^4.0.2",
     "@vue-flow/core": "^1.42.1",
+    "axios": "^1.8.4",
     "irminsul": "file:",
     "moment": "^2.30.1",
+    "moment-timezone": "^0.5.48",
+    "pinia": "^3.0.1",
+    "pinia-plugin-persistedstate": "^4.2.0",
     "primeicons": "^7.0.0",
-    "primevue": "^4.2.5",
+    "primevue": "^4.3.3",
     "quill": "^2.0.3",
     "simple-code-editor": "^2.0.9",
     "tailwindcss-primeui": "^0.4.0",
     "vue": "^3.5.13",
-    "vue-cookies": "^1.8.6",
     "vue-dompurify-html": "^5.2.0",
     "vue-router": "4",
     "vuedraggable": "^2.24.3"
@@ -28,9 +33,13 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.26.0",
+    "eslint-plugin-vue": "^10.1.0",
+    "globals": "^16.1.0",
     "postcss": "^8.5.1",
     "sass-embedded": "^1.83.4",
     "tailwindcss": "^4.0.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vue-eslint-parser": "^10.1.3"
   }
 }

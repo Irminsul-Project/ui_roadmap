@@ -17,7 +17,7 @@ const events = ref([
         <Timeline :value="events" align="alternate" class="customized-timeline">
             <template #marker="slotProps">
                 <span class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm" :style="{ backgroundColor: slotProps.item.color }">
-                    <i :class="slotProps.item.icon"></i>
+                    <i :class="slotProps.item.icon" />
                 </span>
             </template>
             <template #content="slotProps">
@@ -29,12 +29,12 @@ const events = ref([
                         {{ slotProps.item.date }}
                     </template>
                     <template #content>
-                        <img v-if="slotProps.item.image" :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.item.image}`" :alt="slotProps.item.name" width="200" class="shadow-sm" />
+                        <img v-if="slotProps.item.image" :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.item.image}`" :alt="slotProps.item.name" width="200" class="shadow-sm">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
                             neque quas!
                         </p>
-                        <Button label="Read more" text></Button>
+                        <Button label="Read more" text />
                     </template>
                 </Card>
             </template>

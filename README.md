@@ -11,3 +11,4 @@ https://primevue.org/vite
 https://v3.tailwindcss.com/docs/guides/vite
 https://simple-code-editor.vicuxd.com/
 https://www.npmjs.com/package/vue-dompurify-html
+https://pinia.vuejs.org/getting-started.html

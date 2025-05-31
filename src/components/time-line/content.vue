@@ -3,7 +3,10 @@ import json from "../../data/road-map-detail.json";
 import { watchEffect } from 'vue'
 
 const Props = defineProps({
-  content_id: String,
+    contentId: {
+        "type": String,
+        "required": true
+    },
 })
 
 let DetailFound = false
@@ -16,33 +19,32 @@ let title = ""
 let level_knowlage = ""
 
 watchEffect(() => {
-  let Detail = {}
-  DetailFound = false
+    let Detail = {}
+    DetailFound = false
   
-  json.forEach(content => {
-    if (content.id == Props.content_id) {
-      DetailFound = true
-      Detail = content
+    json.forEach(content => {
+        if (content.id == Props.contentId) {
+            DetailFound = true
+            Detail = content
+        }
+    });
+
+    if (DetailFound == true) {
+        categorys = Detail.categorys
+        sections = Detail.sections
+        last_update = Detail.last_update
+        teorys = Detail.teorys
+        sources = Detail.sources
+        title = Detail.title
+        level_knowlage = Detail.level_knowlage
     }
-  });
-
-  if (DetailFound == true) {
-    categorys = Detail.categorys
-    sections = Detail.sections
-    last_update = Detail.last_update
-    teorys = Detail.teorys
-    sources = Detail.sources
-    title = Detail.title
-    level_knowlage = Detail.level_knowlage
-  }
 })
-
 </script>
 
 <template>
-  <h1>
-    Content Title
-  </h1>
+    <h1>
+        Content Title
+    </h1>
 </template>
 
 <style scoped>

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import BlankLayout from '../layout/blank-layout.vue';
 import DefaultLayout from '../layout/default-layout.vue';
 import HomePage from '../page/home.vue';
+import LoginPage from '../page/login.vue';
 import RoadMapDetail from '../page/roadmap-detail.vue';
 import RoadMapHome from '../page/roadmap-home.vue';
 import ForumHome from '../page/forum-home.vue';
@@ -35,7 +36,11 @@ const routes = [
     {
         path: '/', component: BlankLayout, children: [
             {
-                path: '/timeline/:id',
+                path: '/login',
+                component: LoginPage
+            },
+            {
+                path: '/research/:id',
                 component: TimeLineDetail,
                 props: true
             },
