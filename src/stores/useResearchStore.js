@@ -4,7 +4,7 @@ export const useResearchStore = defineStore('research-store', {
   state: () => ({
     id: "",
     description: "",
-    timeline: "",
+    research: "",
     target: [],
   }),
   actions: {
@@ -17,15 +17,15 @@ export const useResearchStore = defineStore('research-store', {
     setTarget(target) {
       this.target = target;
     },
-    setTimeline(timeline) {
-      this.timeline = timeline;
+    setResearch(research) {
+      this.research = research;
     },
   },
   getters: {
     getId: (state) => state.id,
     getDescription: (state) => state.description,
     getTarget: (state) => state.target,
-    getTimeline: (state) => state.timeline,
+    getResearch: (state) => state.research,
   },
   persist: false,
 });

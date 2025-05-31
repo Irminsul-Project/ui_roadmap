@@ -67,7 +67,7 @@ const onSubmit = async ({values}) => {
             <template #title>
                 <div class="flex">
                     <div class="flex-1 text-left">
-                        <hyperlink to="/timeline" title="back" />
+                        <hyperlink to="/reasearch" title="back" />
                     </div>
                     <div class="flex-2">
                         <h1 class="text-center font-extrabold">

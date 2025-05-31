@@ -51,7 +51,7 @@ onMounted(() => {
             </h1>
         </div>
         <div class="flex-1 text-right">
-            <hyperlink title="Create New" to="/timelinecreate" />
+            <hyperlink title="Create New" to="/researchcreate" />
         </div>
     </div>
     <Card>

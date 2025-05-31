@@ -20,7 +20,7 @@ const commentTimeLine = async () => {
     loading.value = true;
 
     try {
-        const CreateForum = await InstanceAPI.post(`api/research/${ResearchStore.getId}/timeline`, {
+        const CreateForum = await InstanceAPI.post(`api/research/${ResearchStore.getId}/research`, {
             "title": title.value,
             "content": content.value
         });
